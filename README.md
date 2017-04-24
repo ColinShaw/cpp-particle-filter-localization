@@ -17,7 +17,8 @@ The general idea of the solution is as follows:
 I found that using 50 particles is reliable in estimating the positions within the
 tolerances desired for the project.  That is to say, I have run it >10 times in a row
 with no failures.  10 particles does fail sporadically with my code, and there is a non-zero chance
-that 50 would as well, just more remote.  Here is what it produces:
+that 50 would as well, just more remote.  My turn-in project uses 100 particles just for safely, but 
+whatever.  Here is what it originally produced:
 
 ![Performance](performance.png)
 
@@ -27,7 +28,8 @@ a lot of opportunity for improvement. Some of the problems with loop unrolling, 
 are addressed quite respectably by using -O3 optimization.  This is only added to the CMake file 
 for GCC since I am not developing in an environment for testing other compilers.  Doing so 
 makes it quite possible to run 1000 particles in the allotted time.  However, since 50 particles
-does the job reliably, I am leaving it since it is much faster to execute.  
+does the job reliably, I am leaving it since it is much faster to execute.  NOTE: I would *never* do 
+this in the actual project since it is judged only on the `particle_filter.cpp` file!
 
 I decided to use the Mersenne Twister generator because it is a better linear conguence generator, 
 albeit potentially slightly more expensive.  In the update step, while it is certainly more 
