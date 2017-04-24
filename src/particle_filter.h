@@ -34,10 +34,6 @@ public:
   void updateWeights(double sensor_range, double std_landmark[], std::vector<LandmarkObs> observations, Map map_landmarks);
   void resample();
   void write(std::string filename);
-  inline double normalSample(double std_dev); 
-  inline int uniformIntSample(int max); 
-  inline double uniformDoubleSample(double max); 
-  inline double gaussian(double sigma_a, double x_a, double sigma_b, double x_b);
 
   const bool initialized() const {
     return is_initialized;
